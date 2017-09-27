@@ -173,7 +173,7 @@ class Pigo(object):
             print("Degree: "+str(x)+", distance: "+str(scan1))
             time.sleep(.01)
 
-    def is_clear(self):
+`    def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
         for x in range((self.MIDPOINT - 15), (self.MIDPOINT + 15), 5):
