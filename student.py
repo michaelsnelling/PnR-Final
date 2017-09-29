@@ -101,14 +101,14 @@ class Piggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
 
-    def error():
-        logging.error("ERROR")
-        print('ERROR')
+def error():
+    logging.error("ERROR")
+    print('ERROR')
 
 
-    def quit_now():
-        """shuts down app"""
-        raise SystemExit
+def quit_now():
+    """shuts down app"""
+    raise SystemExit
 
 ##################################################################
 ######## The app starts right here when we instantiate our GoPiggy
