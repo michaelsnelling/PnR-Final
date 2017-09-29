@@ -57,25 +57,57 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
+        self.to_the_right()
+        self.to_the_left()
+        self.now_dab()
+        self.now_spin()
+        self.now_walk_it_by_yourself()
 
-    def nav(self):
-        """auto pilots and attempts to maintain original heading"""
-        logging.debug("Starting the nav method")
-        print("-----------! NAVIGATION ACTIVATED !------------\n")
-        print("-------- [ Press CTRL + C to stop me ] --------\n")
-        print("-----------! NAVIGATION ACTIVATED !------------\n")
+
+    def to_the_right(self):
+        """subroutine of dance method"""
+        for x in range(3):
+            self.encR(10)
+            self.encF(5)
+
+    def to_the_left(self):
+        """subroutine of dance method"""
+        for x in range(3):
+            self.encR(10)
+            self.encF(5)
+
+    def now_dab(self):
+        """subroutine of dance method"""
+        for x in range(3):
+            self.encR(10)
+            self.encF(5)
+
+    def now_spin(selfself):
+        """subroutine of dance speed"""
+        for x in range (3):
+            self.encR(10)
+            self.encF(5)
+
+    def now_walk_it_by_yourself(self):
+        for x in range(3):
+            self.encR(10)
+            self.encF(5)
+
+
+    def nav(self):...
+
 
 
 ####################################################
 ############### STATIC FUNCTIONS
 
-def error():
+    def error():
     """records general, less specific error"""
     logging.error("ERROR")
     print('ERROR')
 
 
-def quit_now():
+    def quit_now():
     """shuts down app"""
     raise SystemExit
 
