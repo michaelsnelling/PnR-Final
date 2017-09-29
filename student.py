@@ -87,8 +87,9 @@ class Piggy(pigo.Pigo):
         for x in range (3):
             self.encR(10)
             self.encF(5)
-            self.servo(90)
-            
+            self.servo(160)
+            self.servo(20)
+
     def now_walk_it_by_yourself(self):
         for x in range(3):
             self.encR(10)
