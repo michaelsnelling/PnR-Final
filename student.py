@@ -19,11 +19,12 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 77
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.STOP_DIST = 20
+        self.SAFE_STOP_DIST = 30
+        self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 50
+        self.LEFT_SPEED = 90
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 70
+        self.RIGHT_SPEED = 110
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -54,19 +55,35 @@ class Piggy(pigo.Pigo):
 
     # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
+
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-        self.to_the_right()
-        #self.servo(20)
-        #self.encR(90)
-        #self.encL(60)
 
-        self.to_the_left()
-        self.now_dab()
-        self.now_spin()
-        self.now_walk_it_by_yourself()
+        if self.safety_check():
+            self.to_the_right()
+            #self.servo(20)
+            #self.encR(90)
+            #self.encL(60)
 
+            self.to_the_left()
+            self.now_dab()
+            self.now_spin()
+            self.now_walk_it_by_yourself()
+        if self.safety_check()
+
+    def safety_check(self):
+        self.servo(self.MIDPOINT)  # look straight ahead
+        if self.dist() < self.SAFE_STOP_DIST:
+            return False
+        #loop 3 times
+            # turn 90 deg
+        # scan again
+        for x in range(4):
+            if not self.is_clear():
+                return False
+            self.encR(8)
+            return True
 
     def to_the_right(self):
         """subroutine of dance method"""
