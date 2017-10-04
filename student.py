@@ -70,7 +70,7 @@ class Piggy(pigo.Pigo):
             self.now_dab()
             self.now_spin()
             self.now_walk_it_by_yourself()
-        if self.safety_check()
+        if self.safety_check():
 
     def safety_check(self):
         self.servo(self.MIDPOINT)  # look straight ahead
