@@ -86,8 +86,8 @@ class Piggy(pigo.Pigo):
         """subroutine of dance method"""
         for x in range(3):
             self.servo(160)
-            self.encR(90)
-            self.encF(90)
+            self.encR(20)
+            self.encF(5)
 
     def to_the_left(self):
         """subroutine of dance method"""
@@ -106,7 +106,7 @@ class Piggy(pigo.Pigo):
         for x in range (3):
             self.encR(10)
             self.encF(5)
-            self.servo(160, 20, 160)
+            self.servo(90, 60, -90)
 
     def now_walk_it_by_yourself(self):
         for x in range(3):
@@ -114,8 +114,17 @@ class Piggy(pigo.Pigo):
             self.encF(5)
 
 
+        if self.is_clear():
+            self.cruise()
+        else:
+            self.encR(10)
 
-
+    def cruise (self):
+        """drive straight while path is clear"""
+        self.fwd()
+        while self.dist() > self.SAFE_STOP_DIST:
+            time.sleep(.5)
+            self.stop()
 
 
 ####################################################
