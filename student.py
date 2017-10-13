@@ -135,7 +135,7 @@ class Piggy(pigo.Pigo):
     def safe_turn (self):
         """rotate until path is clear"""
         self.right_rot()
-        while self.dist() > self.SAFE_STOP_DIST
+        while self.dist() > self.SAFE_STOP_DIST:
          self.stop()
 ####################################################
 ############### STATIC FUNCTIONS
