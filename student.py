@@ -54,9 +54,6 @@ class Piggy(pigo.Pigo):
         # activate the item selected
         menu.get(ans, [None, error])[1]()
 
-    # YOU DECIDE: How does your GoPiggy dance?
-    def dance(self):
-
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
         self.wide_scan()
@@ -71,10 +68,8 @@ class Piggy(pigo.Pigo):
                     counter += 1
         print("\n----I SEE %d OBJECTS----\n" % counter)
 
-
-
-
-
+    # YOU DECIDE: How does your GoPiggy dance?
+    def dance(self):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
