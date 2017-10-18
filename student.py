@@ -71,7 +71,7 @@ class Piggy(pigo.Pigo):
     def safe_check(self):
         """rotate and estimate the number of obstacles within sight"""
         self.servo(self.MIDPOINT)
-        self.right_rot(90,160)
+        self.right_rot(90, 160)
         self.stop()
 
 
