@@ -68,12 +68,11 @@ class Piggy(pigo.Pigo):
                     counter += 1
         print("\n----I SEE %d OBJECTS----\n" % counter)
 
-    def safe_rotate (self):
-        """rotate until path is clear"""
-        self.servo()
-        self.right_rot()
-        while self.dist() > self.SAFE_STOP_DIST:
-         self.stop()
+    def safe_check(self):
+        """rotate and estimate the number of obstacles within sight"""
+        self.servo(self.MIDPOINT)
+        self.right_rot(90,160)
+        self.stop()
 
 
     # YOU DECIDE: How does your GoPiggy dance?
