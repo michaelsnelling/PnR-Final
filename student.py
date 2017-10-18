@@ -58,7 +58,7 @@ class Piggy(pigo.Pigo):
         """scans and estimates the number of obstacles within sight"""
         self.wide_scan()
         found_something = False
-        counter = 0
+        counter = 2
         for distance in self.scan:
             if distance and distance < 150 and not found_something:
                 found_something = True
@@ -71,8 +71,6 @@ class Piggy(pigo.Pigo):
     def safe_check(self):
         """rotate and estimate the number of obstacles within sight"""
         self.servo(self.MIDPOINT)
-        self.right_rot(90, 160)
-        self.stop()
 
 
     # YOU DECIDE: How does your GoPiggy dance?
