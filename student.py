@@ -58,7 +58,7 @@ class Piggy(pigo.Pigo):
         """scans and estimates the number of obstacles within sight"""
         self.wide_scan()
         found_something = False
-        counter = 2
+        counter = 7
         for distance in self.scan:
             if distance and distance < 150 and not found_something:
                 found_something = True
