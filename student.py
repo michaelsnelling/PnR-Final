@@ -66,9 +66,9 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT)  # look straight ahead
         for x in range(4):
             self.servo(160)
-            self.encR(5)
-            self.encR(5)
-            self.encR(5)
+            self.encR(2)
+            self.encR(2)
+            self.encR(2)
             self.wide_scan(count=5)
         found_something = False
         counter = 0
