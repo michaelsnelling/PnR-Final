@@ -65,7 +65,7 @@ class Piggy(pigo.Pigo):
         """scans and estimates the number of obstacles within sight"""
         self.servo(self.MIDPOINT)  # look straight ahead
         self.encR(90, 60, -90)
-        for loop in range(4):
+        for loop in range(2):
             self.wide_scan(count=5)
         found_something = False
         counter = 0
