@@ -63,7 +63,9 @@ class Piggy(pigo.Pigo):
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
-        self.wide_scan(count=5)
+        self.servo(self.MIDPOINT)  # look straight ahead
+        for loop in range(4):
+            self.wide_scan(count=5)
         found_something = False
         counter = 0
         threshold = 60
@@ -76,6 +78,7 @@ class Piggy(pigo.Pigo):
                 found_something = False
         print("\n-------I see %d object(s)------\n" % counter)
         return counter
+
 
 
     # YOU DECIDE: How does your GoPiggy dance?
