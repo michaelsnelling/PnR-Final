@@ -58,35 +58,26 @@ class Piggy(pigo.Pigo):
         counter = 0
         for x in range(4):
             counter += self.obstacle_count()
-            self.encR(6)
-        print("\n-------I see %d object(s)total------\n" % counter)
+            self.encR(8)
+        print("\n-------I see %d object(s) total------\n" % counter)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
-        self.servo(self.MIDPOINT)  # look straight ahead
-        for x in range(2):
-            self.servo(160)
-
-            self.encR(5)
-            self.encR(5)
-            self.encR(5)
-            
+        for x in range(65, 115):
             self.wide_scan(count=5)
-        found_something = False
-        counter = 0
-        threshold = 60
-        for distance in self.scan:
-            if distance and distance < threshold and not found_something:
-                found_something = True
-                counter += 1
-                print("Object #%d found, I think" % counter)
-            if distance and distance > threshold and found_something:
-                found_something = False
-        print("\n-------I see %d object(s)------\n" % counter)
-        return counter
-
-
-
+            found_something = False
+            counter = 0
+            threshold = 60
+            for self.scan[x] in self.scan:
+                if self.scan[x] and self.scan[x] < threshold and not found_something:
+                    found_something = True
+                    counter += 1
+                    print("Object #%d found, I think" % counter)
+                if self.scan[x] and self.scan[x] > threshold and found_something:
+                    found_something = False
+            print("\n-------I see %d object(s)------\n" % counter)
+            return counter
+ 
     # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         """executes a series of methods that add up to a compound dance"""
