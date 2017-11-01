@@ -67,6 +67,7 @@ class Piggy(pigo.Pigo):
         for x in range(2):
 
             self.servo(160)
+            self.encR(2)
             self.wide_scan(count=5)
         found_something = False
         counter = 0
