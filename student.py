@@ -156,7 +156,7 @@ class Piggy(pigo.Pigo):
         self.encL(7)
         self.restore_heading()
 
-    def nav(self):...
+    def nav(self):
         """auto pilots and attempts to maintain original heading"""
         logging.debug("Starting the nav method")
         print("---------! NAVIGATION ACTIVATED !----------\n")
