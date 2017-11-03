@@ -43,6 +43,7 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
+                "t": ("Test Restore Heading", self.restore_heading),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit_now)
                 }
@@ -77,7 +78,7 @@ class Piggy(pigo.Pigo):
                     found_something = False
             print("\n-------I see %d object(s)------\n" % counter)
             return counter
- 
+
     # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         """executes a series of methods that add up to a compound dance"""
@@ -137,7 +138,25 @@ class Piggy(pigo.Pigo):
             self.encR(10)
             self.encF(5)
 
-    def nav(self):
+    def restore_heading(self):
+        """
+        Uses self.turn_track to reorient to original heading
+        """
+        print("Restoring heading!")
+        if self.turn_track > 0:
+            self.encL(abs(self.turn_track))
+        elif self.turn_track < 0:
+            self.encR(abs(self.turn_track))
+
+    def test_restoring_heading(self):
+        self.encR(5)
+        self.encL(15)
+        self.encR(10)
+        self.encR(10)
+        self.encL(7)
+        self.restore_heading()
+
+    def nav(self):...
         """auto pilots and attempts to maintain original heading"""
         logging.debug("Starting the nav method")
         print("---------! NAVIGATION ACTIVATED !----------\n")
