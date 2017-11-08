@@ -19,12 +19,12 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 77
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.SAFE_STOP_DIST = 40
-        self.HARD_STOP_DIST = 25
+        self.SAFE_STOP_DIST = 50
+        self.HARD_STOP_DIST = 30
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 170
+        self.LEFT_SPEED = 130
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 190
+        self.RIGHT_SPEED = 150
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -171,7 +171,7 @@ class Piggy(pigo.Pigo):
         """drive straight while path is clear"""
         self.fwd()
         while self.dist() > self.SAFE_STOP_DIST:
-            time.sleep(.5)
+            time.sleep(.10)
         self.stop()
 
     def safe_turn (self):
