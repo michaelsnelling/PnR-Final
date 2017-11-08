@@ -79,8 +79,6 @@ class Piggy(pigo.Pigo):
                     found_something = False
             print("\n-------I see %d object(s)------\n" % counter)
             return counter
-
-    # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
