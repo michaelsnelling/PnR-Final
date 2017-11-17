@@ -126,7 +126,7 @@ class Piggy(pigo.Pigo):
             self.encR(10)
             self.encF(5)
 
-    def now_spin(self):+
+    def now_spin(self):
         """subroutine of dance speed"""
         for x in range (3):
             self.encR(10)
