@@ -61,7 +61,7 @@ class Piggy(pigo.Pigo):
         counter = 0
         for x in range(4):
             counter += self.obstacle_count()
-            self.encR(7)
+            self.encR(8)
         print("\n-------I see %d object(s) total------\n" % counter)
 
     def obstacle_count(self):
@@ -126,7 +126,7 @@ class Piggy(pigo.Pigo):
             self.encR(10)
             self.encF(5)
 
-    def now_spin(self):
+    def now_spin(self):+
         """subroutine of dance speed"""
         for x in range (3):
             self.encR(10)
