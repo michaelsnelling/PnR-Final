@@ -61,7 +61,7 @@ class Piggy(pigo.Pigo):
         counter = 0
         for x in range(4):
             counter += self.obstacle_count()
-            self.encR(8)
+            self.encR(10)
         print("\n-------I see %d object(s) total------\n" % counter)
 
     def obstacle_count(self):
