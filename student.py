@@ -184,9 +184,9 @@ class Piggy(pigo.Pigo):
                 time.sleep(.2)
 
     def smart_cruise(self):
-        MAX SPEED = 100
-        MID SPEED = 100
-        LOW SPEED = 100
+        MAXSPEED = 100
+        MIDSPEED = 100
+        LOWSPEED = 100
         self.fwd()
         while True:
             dist = self.dist()
