@@ -183,12 +183,20 @@ class Piggy(pigo.Pigo):
                 print("I give up.")
                 time.sleep(.2)
 
-
-    def cruise (self):
-        """drive straight while path is clear"""
+    def smart_cruise(self):
+        MAX SPEED = 100
+        MID SPEED = 100
+        LOW SPEED = 100
         self.fwd()
-        while self.dist() > self.SAFE_STOP_DIST:
-            time.sleep(.10)
+        while True:
+            dist = self.dist()
+        if dist > 200:
+            self.set_speed(MAX_SPEED, MAX_SPEED)
+        elif dist > 100:
+            self.set_speed(MAX_SPEED, MAX_SPEED)
+        else:
+            self.set_speed(LOW_SPEED, LOW_SPEED)
+        time.sleep(.01)
         self.stop()
 
     def safe_turn (self):
