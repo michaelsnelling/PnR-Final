@@ -44,6 +44,7 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
+                "r": ("Smart Cruise", self.smart_cruise),
                 "t": ("Test Restore Heading", self.restore_heading),
                 "f": ("Full Obstacle Count", self.full_obstacle_count),
                 "s": ("Check status", self.status),
@@ -175,7 +176,7 @@ class Piggy(pigo.Pigo):
                 if not self.is_clear():
                     self.restore()
                     self.encB(10)
-   
+
     def smooth_turn(self):
         self.right_rot()
         start = datetime.datetime.utcnow()
