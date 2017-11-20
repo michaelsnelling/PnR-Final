@@ -169,7 +169,13 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             else:
-                self.encR(10)
+                self.switch_turn(5)
+                if not self.is_clear():
+                    self.switch_turn(10)
+                if not self.is_clear():
+                    self.restore()
+                    self.encB(10)
+   
     def smooth_turn(self):
         self.right_rot()
         start = datetime.datetime.utcnow()
@@ -190,14 +196,14 @@ class Piggy(pigo.Pigo):
         self.fwd()
         while True:
             dist = self.dist()
-        if dist > 200:
-            self.set_speed(MAX_SPEED, MAX_SPEED)
-        elif dist > 100:
-            self.set_speed(MAX_SPEED, MAX_SPEED)
-        else:
-            self.set_speed(LOW_SPEED, LOW_SPEED)
-        time.sleep(.01)
-        self.stop()
+            if dist > 200:
+                self.set_speed(MAX_SPEED, MAX_SPEED)
+            elif dist > 100:
+                self.set_speed(MAX_SPEED, MAX_SPEED)
+            else:
+                self.set_speed(LOW_SPEED, LOW_SPEED)
+                time.sleep(.01)
+                self.stop()
 
     def safe_turn (self):
         """rotate until path is clear"""
