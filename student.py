@@ -44,7 +44,6 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
-                "r": ("Smart Cruise", self.smart_cruise),
                 "t": ("Test Restore Heading", self.restore_heading),
                 "f": ("Full Obstacle Count", self.full_obstacle_count),
                 "s": ("Check status", self.status),
@@ -168,7 +167,7 @@ class Piggy(pigo.Pigo):
         print ("It took you %d seconds to run this" % difference)
         while True:
             if self.is_clear():
-                self.smart_cruise()
+                self.nav_cruise()
             else:
                 self.switch_turn()
                 self.encL(10)
@@ -192,21 +191,17 @@ class Piggy(pigo.Pigo):
                 print("I give up.")
                 time.sleep(.2)
 
-    def smart_cruise(self):
-        MAXSPEED = 100
-        MIDSPEED = 100
-        LOWSPEED = 100
-        self.fwd()
-        while True:
-            dist = self.dist()
-            if dist > 200:
-                self.set_speed(MAX_SPEED, MAX_SPEED)
-            elif dist > 100:
-                self.set_speed(MAX_SPEED, MAX_SPEED)
-            else:
-                self.set_speed(LOW_SPEED, LOW_SPEED)
-                time.sleep(.01)
-                self.stop()
+    def nav_cruise(self):
+            self.servo(self.MIDPOINT)
+            self.cruise()
+
+    def cruise(self):
+            """drive straight while path is clear"""
+            print("about to drive forward")
+            self.fwd()
+            while self.dist() > self.SAFE_STOP_DIST:
+                time.sleep(.05)
+            self.stop()
 
     def safe_turn (self):
         """rotate until path is clear"""
