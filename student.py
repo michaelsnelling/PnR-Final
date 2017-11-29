@@ -170,13 +170,13 @@ class Piggy(pigo.Pigo):
                 self.nav_cruise()
             else:
                 self.switch_turn()
-                self.encL(10)
+                self.encL(4)
             if not self.is_clear():
                 self.switch_turn()
-                self.encR(10)
+                self.encR(4)
             if not self.is_clear():
                 self.restore_heading()
-                self.encB(10)
+                self.encB(4)
 
     def switch_turn(self):
         self.right_rot()
