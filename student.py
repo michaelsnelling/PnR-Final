@@ -171,10 +171,10 @@ class Piggy(pigo.Pigo):
             else:
                 self.switch_turn()
                 self.encL(4)
-            if not self.is_clear():
+            if self.is_clear():
                 self.switch_turn()
                 self.encR(4)
-            if not self.is_clear():
+            if self.is_clear():
                 self.restore_heading()
                 self.encB(4)
 
