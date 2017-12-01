@@ -18,14 +18,14 @@ class Piggy(pigo.Pigo):
         print("I have been instantiated!")
         self.start_time = datetime.datetime.utcnow()
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
-        self.MIDPOINT = 77
+        self.MIDPOINT = 75
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.SAFE_STOP_DIST = 25
         self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 150
+        self.LEFT_SPEED = 120
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 170
+        self.RIGHT_SPEED = 150
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
