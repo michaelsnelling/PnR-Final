@@ -171,15 +171,15 @@ class Piggy(pigo.Pigo):
             else:
                 self.switch_turn()
             if self.is_clear():
-                self.encR(2)
+                self.encR()
             if self.is_clear():
                 self.restore_heading()
-                self.encB(2)
+                self.encB()
 
     def switch_turn(self):
         self.right_rot()
         start = datetime.datetime.utcnow()
-        self.servo()
+        self.servo(self.MIDPOINT)
         while True:
             if self.dist() > 100:
                 self.stop()
