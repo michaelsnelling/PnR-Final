@@ -176,7 +176,7 @@ class Piggy(pigo.Pigo):
                 self.encB(.2)
 
     def check_right(self):
-        self.servo(self.MIDPOINT)
+        self.MIDPOINT = 80
         self.encR(12)
         time.sleep(1)
 
