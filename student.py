@@ -169,11 +169,22 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             else:
-                self.switch_turn()
+                self.check_right()
             if self.is_clear():
                 self.cruise()
             if self.is_clear():
                 self.encB(.2)
+
+    def check_right(self):
+        self.servo(self.MIDPOINT)
+        self.encR(4)
+        time.sleep(1)
+
+    def check_left(self):
+        self.servo(self.MIDPOINT)
+        self.encL(4)
+        time.sleep(1)
+
 
     def switch_turn(self):
         self.right_rot()
