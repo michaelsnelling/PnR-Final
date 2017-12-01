@@ -174,7 +174,6 @@ class Piggy(pigo.Pigo):
                 self.cruise()
             if self.is_clear():
 
-
     def check_right(self):
         self.MIDPOINT = 80
         self.encR(12)
