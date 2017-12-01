@@ -173,7 +173,7 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             if self.is_clear():
-               
+
 
     def check_right(self):
         self.MIDPOINT = 80
@@ -184,7 +184,6 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT)
         self.encL(12)
         time.sleep(1)
-
 
     def switch_turn(self):
         self.right_rot()
