@@ -167,16 +167,15 @@ class Piggy(pigo.Pigo):
         print ("It took you %d seconds to run this" % difference)
         while True:
             if self.is_clear():
-                self.nav_cruise()
+                self.cruise()
             else:
                 self.switch_turn()
-                self.encL(4)
             if self.is_clear():
                 self.switch_turn()
-                self.encR(4)
+                self.encR(2)
             if self.is_clear():
                 self.restore_heading()
-                self.encB(4)
+                self.encB(2)
 
     def switch_turn(self):
         self.right_rot()
