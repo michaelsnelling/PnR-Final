@@ -171,7 +171,7 @@ class Piggy(pigo.Pigo):
             else:
                 self.switch_turn()
             if self.is_clear():
-                self.encR(.2)
+                self.cruise()
             if self.is_clear():
                 self.encB(.2)
 
