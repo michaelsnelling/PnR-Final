@@ -171,10 +171,9 @@ class Piggy(pigo.Pigo):
             else:
                 self.switch_turn()
             if self.is_clear():
-                self.encR()
+                self.encR(.2)
             if self.is_clear():
-                self.restore_heading()
-                self.encB()
+                self.encB(.2)
 
     def switch_turn(self):
         self.right_rot()
