@@ -177,7 +177,6 @@ class Piggy(pigo.Pigo):
 
     def switch_turn(self):
         self.right_rot()
-        start = datetime.datetime.utcnow()
         self.servo(self.MIDPOINT)
         while True:
             if self.dist() > 100:
