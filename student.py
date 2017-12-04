@@ -18,12 +18,12 @@ class Piggy(pigo.Pigo):
         print("I have been instantiated!")
         self.start_time = datetime.datetime.utcnow()
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
-        self.MIDPOINT = 80
+        self.MIDPOINT = 77
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.SAFE_STOP_DIST = 30
         self.HARD_STOP_DIST = 25
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 160
+        self.LEFT_SPEED = 140
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.RIGHT_SPEED = 160
         # This one isn't capitalized because it changes during runtime, the others don't
