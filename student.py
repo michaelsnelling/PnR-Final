@@ -170,10 +170,6 @@ class Piggy(pigo.Pigo):
                 self.cruise()
             else:
                 self.check_right()
-            if self.is_clear():
-                self.cruise()
-            if self.is_clear():
-                self.cruise()
 
     def check_right(self):
         self.MIDPOINT = 80
@@ -199,17 +195,17 @@ class Piggy(pigo.Pigo):
                 time.sleep(.2)
 
     def nav_cruise(self):
-            self.servo(self.MIDPOINT)
-            self.cruise()
+        self.servo(self.MIDPOINT)
+        self.cruise()
 
     def cruise(self):
-            """drive straight while path is clear"""
-            print("about to drive forward")
-            self.servo(self.MIDPOINT)
-            self.fwd()
-            while self.dist() > self.SAFE_STOP_DIST:
-                time.sleep(.05)
-            self.stop()
+        """drive straight while path is clear"""
+        print("about to drive forward")
+        self.servo(self.MIDPOINT)
+        self.fwd()
+        while self.dist() > self.SAFE_STOP_DIST:
+            time.sleep(.05)
+        self.stop()
 
     def safe_turn (self):
         """rotate until path is clear"""
