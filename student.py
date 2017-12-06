@@ -177,12 +177,12 @@ class Piggy(pigo.Pigo):
 
     def check_right(self):
         self.MIDPOINT = 80
-        self.encR(12)
+        self.encR(14)
         time.sleep(1)
 
     def check_left(self):
         self.servo(self.MIDPOINT)
-        self.encL(12)
+        self.encL(14)
         time.sleep(1)
 
     def switch_turn(self):
